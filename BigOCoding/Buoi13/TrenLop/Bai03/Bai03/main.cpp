@@ -17,35 +17,33 @@
 
 using namespace std;
 
-int n;
-
 int main () {
     
 #ifndef ONLINE_JUDGE
     freopen("/Users/TamLe/Documents/Input.txt", "rt", stdin);
 #endif
     
-    ios :: sync_with_stdio(false);
-    cin.tie(0);
+    int n;
+    scanf("%d", &n);
     
-    cin >> n;
-    set <long long> S;
+    set <long long> s;
+    set <long long> :: iterator it;
 
-    long long res = 1e17 + 1000;
-    
+    long long res = 1e17;
+    long long x;
+
     for (int i = 1; i <= n; i++) {
-        long long x;
-        cin >> x;
+        scanf("%lld", &x);
         
-        set <long long> :: iterator it = S.upper_bound(x);
+        it = s.upper_bound(x);
         
-        printf("%lld\n", *it);
-        if (it != S.end())
+        if (it != s.end())
             res = min(res , *it - x);
         
-        S.insert(x);
+        s.insert(x);
     }
     
-    cout << res;
+    printf("%lld", res);
+    
     return 0; 
 }
