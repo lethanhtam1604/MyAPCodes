@@ -1,4 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <VariablesViewState
    version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "solve():main.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "memo">
+            </PersistentString>
+            <PersistentString
+               value = "timeline">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "main:main.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "f[j]">
+            </PersistentString>
+            <PersistentString
+               value = "p">
+            </PersistentString>
+            <PersistentString
+               value = "c">
+            </PersistentString>
+            <PersistentString
+               value = "bk + f[i]">
+            </PersistentString>
+            <PersistentString
+               value = "n">
+            </PersistentString>
+            <PersistentString
+               value = "f">
+            </PersistentString>
+            <PersistentString
+               value = "f[i]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
 </VariablesViewState>
