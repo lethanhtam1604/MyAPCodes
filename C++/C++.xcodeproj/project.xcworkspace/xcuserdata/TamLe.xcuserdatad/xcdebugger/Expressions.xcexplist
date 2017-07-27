@@ -17,25 +17,28 @@
          contextName = "main:main.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "f[j]">
+               value = "v[i]">
             </PersistentString>
             <PersistentString
-               value = "p">
+               value = "A[i]">
             </PersistentString>
             <PersistentString
-               value = "c">
+               value = "B[A[i]]">
             </PersistentString>
             <PersistentString
-               value = "bk + f[i]">
+               value = "A[x]">
             </PersistentString>
             <PersistentString
-               value = "n">
+               value = "s[0]">
             </PersistentString>
             <PersistentString
-               value = "f">
+               value = "s[r]">
             </PersistentString>
             <PersistentString
-               value = "f[i]">
+               value = "B">
+            </PersistentString>
+            <PersistentString
+               value = "s[r].length()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
