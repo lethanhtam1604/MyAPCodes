@@ -33,23 +33,12 @@ vector<int> parent;
 int findSet(int u) {
     while(u != parent[u])
         u = parent[u];
-    
     return u;
 }
 
 void unionSet(int u, int v) {
     int up = findSet(u);
     int vp = findSet(v);
-    
-//    int root = 0, child = 0;
-//    if (up >= vp) {
-//        root = up;
-//        child = vp;
-//    }
-//    else {
-//        root = vp;
-//        child = up;
-//    }
     parent[vp] = up;
 }
 

@@ -14,7 +14,7 @@
 #include <functional>
 #include <map>
 
-#define MAX 10005
+#define MAX 1005
 
 using namespace std;
 
@@ -25,6 +25,16 @@ struct Pair {
     Pair(int a, int b) {
         u = a;
         v = b;
+    }
+};
+
+struct Request {
+    string x;
+    string y;
+
+    Request(string a, string b) {
+        x = a;
+        y = b;
     }
 };
 
@@ -51,21 +61,21 @@ int main() {
     int n;
     scanf("%d", &n);
     
-    int count[MAX];
     int root;
     
     int k = 1, u, v;
     string x, y;
     
     map<string, int> data;
-    
-    parent = vector<int>(n+2);
-    
+
     vector<Pair> pairs;
-    
-    for (int i = 1; i <= n; i++) {
+    vector<Request> requests;
+
+    for (int i = 1; i <= n; ++i) {
         
         cin>>x>>y;
+
+        requests.push_back(Request(x, y));
         
         if(data.find(x) == data.end()) {
             data[x] = k++;
@@ -76,35 +86,42 @@ int main() {
         }
         
         u = data[x]; v = data[y];
-        
-        
+
         pairs.push_back(Pair(u, v));
     }
-    
-    memset(count, 0, sizeof(count));
-    
-    for (int i = 1; i <= k - 1; i++) {
+
+    parent = vector<int>(k + 2);
+
+    for (int i = 1; i <= k - 1; ++i) {
         parent[i] = i;
     }
     
-    for (int i = 0; i < pairs.size(); i++) {
+    for (int i = 0; i < pairs.size(); ++i) {
         unionSet(pairs[i].u, pairs[i].v);
     }
-    
-    for (int i = 1; i <= k - 1; i++) {
-        root = findSet(i);
-        count[root] += 1;
+
+    vector<string> result[k + 2];
+
+    for (int i = 0; i < pairs.size(); ++i) {
+
+        root = findSet(pairs[i].u);
+        result[root].push_back(requests[i].x);
+        result[root].push_back(requests[i].y);
     }
-    
-    int max = 0;
-    
-    for (int i = 1; i <= k - 1; i++) {
-        if (count[i] > max) {
-            max = count[i];
+
+    vector<Request> res;
+
+    for (int i = 1; i <= k - 1; ++i) {
+        if (result[i].size() > 0) {
+            res.push_back(Request(result[i][0], result[i][result[i].size() - 1]));
         }
     }
-    
-    printf("%d\n", max);
-    parent.clear();
-    
+
+    cout<<res.size()<<endl;
+
+    for (int i = 0; i < res.size(); ++i) {
+        cout<<res[i].x<<" "<<res[i].y<<endl;
+    }
+
+    return 0;
 }

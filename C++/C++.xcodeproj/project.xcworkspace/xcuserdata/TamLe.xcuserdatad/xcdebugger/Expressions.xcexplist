@@ -17,28 +17,7 @@
          contextName = "main:main.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "v[i]">
-            </PersistentString>
-            <PersistentString
-               value = "A[i]">
-            </PersistentString>
-            <PersistentString
-               value = "B[A[i]]">
-            </PersistentString>
-            <PersistentString
-               value = "A[x]">
-            </PersistentString>
-            <PersistentString
-               value = "s[0]">
-            </PersistentString>
-            <PersistentString
-               value = "s[r]">
-            </PersistentString>
-            <PersistentString
-               value = "B">
-            </PersistentString>
-            <PersistentString
-               value = "s[r].length()">
+               value = "isPrime">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
