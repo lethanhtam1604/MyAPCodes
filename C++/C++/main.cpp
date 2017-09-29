@@ -24,48 +24,43 @@
 #include <stack>
 #include <queue>
 
+#include<cstdio>
+#include<iostream>
+#include<cstdlib>
+#include<cstring>
+#include<string>
+#include<algorithm>
+#include<vector>
+#include<set>
+#include<queue>
+#include<stack>
+#include<map>
+#include<utility>
+#include<sstream>
+#include<climits>
 using namespace std;
 
-
-bool isCoPrime(int x, int y) {
-
-    bool res = true;
-
-    for(int i = 2; i <=x; ++i) {
-        if(x % i == 0 && y % i == 0) {
-            res = false;
-            break;
-        }
+int main(){
+    int x[8],y[8];
+    set<int> q,w;
+    set<pair<int,int> > e;
+    for(int i=0;i<8;++i){
+        scanf("%d%d",&x[i],&y[i]);
+        q.insert(x[i]);
+        w.insert(y[i]);
+        e.insert(make_pair(x[i],y[i]));
     }
-
-    return res;
-}
-
-
-int main() {
-
-#ifndef ONLINE_JUDGE
-    freopen("/Users/TamLe/Documents/Input.txt", "rt", stdin);
-#endif
-
-    int n;
-    cin>>n;
-
-    int a = 0, b = 0;
-
-    int mid = n/2;
-
-    for (int i = mid; i >= 1; --i) {
-        if (i < n - i) {
-            if (isCoPrime(i, n - i)) {
-                a = i;
-                b = n - i;
-                break;
-            }
-        }
+    if(q.size()!=3||w.size()!=3||e.size()!=8){
+        printf("ugly"); return 0;
     }
-
-    cout<<a<<" "<<b<<endl;
+    set<int>::iterator i=q.begin(),j=w.begin();
+    ++i;
+    ++j;
+    if(e.count(make_pair(*i,*j))){
+        printf("ugly"); return 0;
+    }
+    printf("respectable");
+    return 0;
 }
 
 
