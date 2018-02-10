@@ -1,67 +1,107 @@
-#include <iostream>
 #include <stdio.h>
-#include <vector>
-#include <math.h>
-#include <unordered_map>
-#include <string>
-#include <algorithm>
-#include <string.h>
-#include <unordered_set>
+#include <map>
 #include <set>
-#include <stack>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
 #include <queue>
-
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
 #include <iostream>
-#include <stdio.h>
-#include <vector>
-#include <math.h>
-#include <unordered_map>
-#include <string>
 #include <algorithm>
-#include <string.h>
+#include <unordered_map>
 #include <unordered_set>
-#include <set>
-#include <stack>
-#include <queue>
+#include <string.h>
+#include <limits>
 
-#include<cstdio>
-#include<iostream>
-#include<cstdlib>
-#include<cstring>
-#include<string>
-#include<algorithm>
-#include<vector>
-#include<set>
-#include<queue>
-#include<stack>
-#include<map>
-#include<utility>
-#include<sstream>
-#include<climits>
 using namespace std;
 
 int main(){
-    int x[8],y[8];
-    set<int> q,w;
-    set<pair<int,int> > e;
-    for(int i=0;i<8;++i){
-        scanf("%d%d",&x[i],&y[i]);
-        q.insert(x[i]);
-        w.insert(y[i]);
-        e.insert(make_pair(x[i],y[i]));
+    
+#ifndef ONLINE_JUDGE
+    freopen("/Users/thanhtamle/Documents/INPUT.txt", "rt", stdin);
+#endif
+    
+    int n;
+    cin>>n;
+    
+    vector<int> v;
+    int temp;
+    
+    for(int i = 0; i < n; ++i) {
+        cin>>temp;
+        v.push_back(temp);
     }
-    if(q.size()!=3||w.size()!=3||e.size()!=8){
-        printf("ugly"); return 0;
+    
+    for(int i = 0; i < n; ++i) {
+
     }
-    set<int>::iterator i=q.begin(),j=w.begin();
-    ++i;
-    ++j;
-    if(e.count(make_pair(*i,*j))){
-        printf("ugly"); return 0;
-    }
-    printf("respectable");
+    
+    
     return 0;
 }
+
+//int main() {
+//
+//#ifndef ONLINE_JUDGE
+//    freopen("/Users/thanhtamle/Documents/INPUT.txt", "rt", stdin);
+//#endif
+//
+//    int n;
+//    cin>>n;
+//
+//    if (n == 1) {
+//        cout<<n<<endl;
+//        return 0;
+//    }
+//
+//    int temp;
+//
+//    vector<int> v;
+//    vector<bool> b;
+//    for(int i = 1; i <= n; ++i) {
+//        cin>>temp;
+//        v.push_back(i - temp);
+//        b.push_back(false);
+//    }
+//
+//    int j = 0;
+//    int count = 0;
+//    int pointer = -1;
+//    for(int i = 1; i < n; ++i) {
+//
+//        while (j < i) {
+//            if (b[j] == false && j + 1 >= v[i]) {
+//                count++;
+//                b[j] = true;
+//            } else {
+//                if (pointer == -1)
+//                    pointer = j;
+//            }
+//
+//            j++;
+//        }
+//
+//        if (pointer != -1)
+//            j = pointer;
+//        pointer = -1;
+//    }
+//
+//    cout<<n - count<<endl;
+//
+//    return 0;
+//}
 
 
 //int main() {

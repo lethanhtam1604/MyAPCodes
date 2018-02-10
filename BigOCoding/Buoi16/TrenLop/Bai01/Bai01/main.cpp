@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <stdio.h>
 
 using namespace std;
 #define MAX 10
@@ -77,7 +78,7 @@ bool removeWord(struct Node *root, string s, int level, int len) {
         root->child[ch] = NULL;
         return true;
     }
-        
+    
     return false;
 }
 
@@ -93,38 +94,32 @@ void deleteTrie(Node *root) {
 
 int main() {
 #ifndef ONLINE_JUDGE
-    freopen("/Users/TamLe/Documents/Input.txt", "rt", stdin);
+    freopen("/Users/thanhtamle/Documents/INPUT.txt", "rt", stdin);
 #endif
     
     int t, n;
     string s;
     cin>>t;
     
-    vector<string> v;
-    
     for(int k = 1; k <= t; k++) {
         struct Node *root = newNode();
         result = false;
-
+        
         cin>>n;
         for(int i = 0; i < n; i++) {
             cin>>s;
             addWord(root, s);
-            v.push_back(s);
         }
         
         if (result == true) {
-            cout<<"NO"<<endl;
+            printf("Case %d: NO\n", k);
         }
         else {
-            cout<<"YES"<<endl;
+            printf("Case %d: YES\n", k);
         }
         
         deleteTrie(root);
-        v.clear();
     }
     
     return 0;
 }
-
-
